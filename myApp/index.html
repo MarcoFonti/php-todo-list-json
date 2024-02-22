@@ -25,6 +25,10 @@
         <ul>
             <li v-for="(task, i) in tasks" :key="i"> {{ task.text }} </li>
         </ul>
+        <div class="input-group m-3 w-25">
+            <input type="text" class="form-control" placeholder="Crea Task" v-model.trim="newTask">
+            <button class="btn btn-outline-primary" type="submit" @click="getAddTask">Invia</button>
+        </div>
     </div>
 </body>
 </html>
