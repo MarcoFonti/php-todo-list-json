@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css/style.css">
     <!-- AXIOS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- VUE -->
@@ -21,13 +19,16 @@
 </head>
 <body>
     <div id="root">
-        <!-- STAMPO I NOME DELLA CHIAMATA API USANDO UN CICLO -->
-        <ul>
-            <li v-for="(task, i) in tasks" :key="i"> {{ task.text }} </li>
-        </ul>
-        <div class="input-group m-3 w-25">
-            <input type="text" class="form-control" placeholder="Crea Task" v-model.trim="newTask">
-            <button class="btn btn-outline-primary" type="submit" @click="getAddTask">Invia</button>
+        <div class="container w-25 mt-5">
+            <h1 class="text-center text-danger">LISTA</h1>
+            <!-- STAMPO I NOME DELLA CHIAMATA API USANDO UN CICLO -->
+            <ul class="list-group">
+                <li class="list-group-item bg-light text-dark" v-for="(task, i) in tasks" :key="i">{{ task.text }}</li>
+            </ul>
+            <div class="input-group mt-3">
+                <input type="text" class="form-control bg-light-subtle" placeholder="Crea Task" v-model.trim="newTask">
+                <button class="btn btn-outline-warning" type="submit" @click="getAddTask">Invia</button>
+            </div>
         </div>
     </div>
 </body>
