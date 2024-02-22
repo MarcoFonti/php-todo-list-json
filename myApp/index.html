@@ -17,9 +17,14 @@
     <!-- VUE -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- JS -->
-    <script src="./js/script.js"></script>
+    <script defer src="./js/script.js"></script>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">
+        <!-- STAMPO I NOME DELLA CHIAMATA API USANDO UN CICLO -->
+        <ul>
+            <li v-for="(task, i) in tasks" :key="i"> {{ task.text }} </li>
+        </ul>
+    </div>
 </body>
 </html>
